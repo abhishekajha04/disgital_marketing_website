@@ -99,24 +99,15 @@ class WebFooterState extends State<WebFooter> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Flexible(
-                flex: 1, // Equal space allocation
+            Expanded(
                 child: Align(
-                    alignment: Alignment.center,
-                    child: Expanded(
-                        child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: speederDetails())))),
+                    alignment: Alignment.centerLeft, child: speederDetails())),
             SizedBox(width: 0.03 * width), // Dynamically sized space
-            Flexible(
-                flex: 1, // Equal space allocation
-                child: quickLinks(widget.onItemTapped)),
+            Expanded(child: quickLinks(widget.onItemTapped)),
             SizedBox(width: 0.03 * width), // Dynamically sized space
             ourExpertise(context),
             SizedBox(width: 0.03 * width), // Dynamically sized space
-            Flexible(
-                flex: 1, // Equal space allocation
-                child: contactDetails()),
+            Expanded(child: contactDetails()),
           ],
         ),
       ),

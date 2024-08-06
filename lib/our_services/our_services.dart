@@ -172,13 +172,19 @@ Widget ourServicesGrid(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.network(
-                  "${gridMap.elementAt(index)['image']}",
+                // Use Image.asset since your images are local assets
+                Image.asset(
+                  gridMap[index]['image'], // Remove string interpolation here
                   width: 75 / mockupWebWidth * width,
+                  errorBuilder: (BuildContext context, Object exception,
+                      StackTrace? stackTrace) {
+                    return const Text(
+                        'Image not found'); // Handle error gracefully
+                  },
                 ),
                 SizedBox(height: 20 / mockupWebWidth * width),
                 Text(
-                  "${gridMap.elementAt(index)['title']}",
+                  gridMap[index]['title'], // Remove string interpolation here
                   style: const TextStyle(
                     fontFamily: "Montserrat",
                     fontSize: 16,
@@ -187,7 +193,8 @@ Widget ourServicesGrid(
                 ),
                 SizedBox(height: 10 / mockupWebWidth * width),
                 Text(
-                  "${gridMap.elementAt(index)['description']}",
+                  gridMap[index]
+                      ['description'], // Remove string interpolation here
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontFamily: "Montserrat",

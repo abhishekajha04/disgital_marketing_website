@@ -33,77 +33,145 @@ class PricingState extends State<Pricing> {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 13, fontFamily: "Montserrat"),
             )),
-        if (Responsive.isDesktop(context)) const WebPricing(),
-        if (!Responsive.isDesktop(context)) const MobPricing()
+        PriceExpansion(
+          heading: "Business Website Development",
+          iconDirectionFlag: 0,
+          label1: "Informative",
+          price1: "₹9,999",
+          description1: "Perfect for Entrepreneurs",
+          label2: "E-Commerce",
+          price2: "₹14,999",
+          description2: "Perfect for Entrepreneurs",
+          label3: "Customized",
+          price3: "Contact Us",
+          description3: "Perfect for Entrepreneurs",
+          expandedHeight: 1150,
+          data: priceDetails2,
+        ),
+        PriceExpansion(
+          heading: "Brand Book",
+          iconDirectionFlag: 1,
+          label1: "Silver",
+          price1: "₹14,999",
+          description1: "Perfect for Entrepreneurs",
+          label2: "Gold",
+          price2: "₹19,999",
+          description2: "Perfect for Entrepreneurs",
+          label3: "Primimum",
+          price3: "₹29,999",
+          description3: "Perfect for Entrepreneurs",
+          expandedHeight: 1150,
+          data: priceDetails2,
+        ),
+        PriceExpansion(
+          heading: "SEO",
+          iconDirectionFlag: 0,
+          label1: "Silver",
+          price1: "₹19,999",
+          description1: "Perfect for Entrepreneurs",
+          label2: "Gold",
+          price2: "₹26,999",
+          description2: "Perfect for Entrepreneurs",
+          label3: "Premimum",
+          price3: "₹34,999",
+          description3: "Perfect for Entrepreneurs",
+          expandedHeight: 1150,
+          data: priceDetails2,
+        ),
+        PriceExpansion(
+          heading: "Performance Marketing",
+          iconDirectionFlag: 1,
+          label1: "Silver",
+          price1: "₹14,999",
+          description1: "Perfect for Entrepreneurs",
+          label2: "Gold",
+          price2: "₹24,999",
+          description2: "Perfect for Entrepreneurs",
+          label3: "Premium",
+          price3: "₹39,999",
+          description3: "Perfect for Entrepreneurs",
+          expandedHeight: 1150,
+          data: priceDetails2,
+        ),
+        PriceExpansion(
+          heading: "Social Media Marketing",
+          iconDirectionFlag: 0,
+          label1: "Silver",
+          price1: "₹14,999",
+          description1: "Perfect for Entrepreneurs",
+          label2: "Gold",
+          price2: "₹19,999",
+          description2: "Perfect for Entrepreneurs",
+          label3: "Premium",
+          price3: "₹29,999",
+          description3: "Perfect for Entrepreneurs",
+          expandedHeight: 1150,
+          data: priceDetails2,
+        )
       ],
     );
   }
 }
 
-class WebPricing extends StatefulWidget {
-  const WebPricing({super.key});
+class PriceExpansion extends StatefulWidget {
+  final String heading;
+  final int iconDirectionFlag;
+  final String label1;
+  final String price1;
+  final String label2;
+  final String price2;
+  final String label3;
+  final String price3;
+  final double expandedHeight;
+  final String description1;
+  final String description2;
+
+  final String description3;
+
+  final List<Map<String, dynamic>> data;
+  const PriceExpansion(
+      {super.key,
+      required this.heading,
+      required this.iconDirectionFlag,
+      required this.label1,
+      required this.description1,
+      required this.price2,
+      required this.label2,
+      required this.description2,
+      required this.price3,
+      required this.label3,
+      required this.description3,
+      required this.price1,
+      required this.expandedHeight,
+      required this.data});
 
   @override
   State<StatefulWidget> createState() {
-    return WebPricingState();
+    return PriceExpansionState();
   }
 }
 
-class WebPricingState extends State<WebPricing> {
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [WebPriceExpansion()],
-    );
-  }
-}
-
-class MobPricing extends StatefulWidget {
-  const MobPricing({super.key});
-
-  @override
-  State<StatefulWidget> createState() {
-    return MobPricingState();
-  }
-}
-
-class MobPricingState extends State<MobPricing> {
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [],
-    );
-  }
-}
-
-class WebPriceExpansion extends StatefulWidget {
-  const WebPriceExpansion({super.key});
-
-  @override
-  State<StatefulWidget> createState() {
-    return WebPriceExpansionState();
-  }
-}
-
-class WebPriceExpansionState extends State<WebPriceExpansion> {
+class PriceExpansionState extends State<PriceExpansion> {
   bool _isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: 15),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              "assets/images/arrow_curve.png",
-              width: 60,
-            ),
+            if (widget.iconDirectionFlag == 0)
+              Image.asset(
+                "assets/images/arrow_curve.png",
+                width: 60,
+              ),
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
               child: Text(
-                "Business Website Development",
+                widget.heading,
                 style: TextStyle(
                   fontSize: 20,
                   fontFamily: "Montserrat",
@@ -111,166 +179,80 @@ class WebPriceExpansionState extends State<WebPriceExpansion> {
                 ),
               ),
             ),
-            // Image.asset(
-            //   "assets/images/left_arrow.png",
-            //   width: 60,
-            // )
+            if (widget.iconDirectionFlag == 1)
+              Image.asset(
+                "assets/images/left_arrow.png",
+                width: 60,
+              )
           ],
         ),
-        Container(
-          constraints: const BoxConstraints(maxWidth: 1200),
-          child: Row(
+        if (Responsive.isDesktop(context))
+          Container(
+            constraints: const BoxConstraints(maxWidth: 1200),
+            child: Row(
+              children: [
+                Expanded(
+                  child: PriceDetailsContainer(
+                    isExpanded: _isExpanded,
+                    label: widget.label1,
+                    price: widget.price1,
+                    description: widget.description1,
+                    expandedHeight: 1150,
+                    data: priceDetails2,
+                  ),
+                ),
+                Expanded(
+                  child: PriceDetailsContainer(
+                    isExpanded: _isExpanded,
+                    label: widget.label2,
+                    price: widget.price2,
+                    description: widget.description2,
+                    expandedHeight: 1150,
+                    data: priceDetails1,
+                  ),
+                ),
+                Expanded(
+                  child: PriceDetailsContainer(
+                    isExpanded: _isExpanded,
+                    label: widget.label3,
+                    price: widget.price3,
+                    description: widget.description3,
+                    expandedHeight: 1150,
+                    data: priceDetails,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        if (!Responsive.isDesktop(context))
+          Column(
             children: [
-              Expanded(
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
-                  height: _isExpanded ? 1150 : 170,
-                  margin: const EdgeInsets.all(20),
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: hexToColor("#fef7ff"),
-                    borderRadius: const BorderRadius.all(Radius.circular(20)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: _isExpanded
-                        ? MainAxisAlignment.start
-                        : MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      nonExpandedDetails(
-                        "Informative",
-                        "₹9,999",
-                        "Perfect for Entrepreneurs",
-                      ),
-                      if (_isExpanded)
-                        Container(
-                            height: 1,
-                            margin: const EdgeInsets.only(top: 15, bottom: 10),
-                            width: double.infinity,
-                            color: hexToColor("#D7CFCF")),
-                      if (_isExpanded)
-                        Expanded(
-                          child: ListView.builder(
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemCount: priceDetails2.length,
-                            itemBuilder: (context, index) {
-                              return priceText(priceDetails2[index]);
-                            },
-                          ),
-                        )
-                    ],
-                  ),
-                ),
+              PriceDetailsContainer(
+                isExpanded: _isExpanded,
+                label: widget.label1,
+                price: widget.price1,
+                description: widget.description1,
+                expandedHeight: 1150,
+                data: priceDetails2,
               ),
-              Expanded(
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
-                  height: _isExpanded ? 1150 : 170,
-                  margin: const EdgeInsets.all(20),
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: hexToColor("#fef7ff"),
-                    borderRadius: const BorderRadius.all(Radius.circular(20)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: _isExpanded
-                        ? MainAxisAlignment.start
-                        : MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      nonExpandedDetails(
-                        "E-commerce",
-                        "₹14,999",
-                        "Perfect for Entrepreneurs",
-                      ),
-                      if (_isExpanded)
-                        Container(
-                            height: 1,
-                            margin: const EdgeInsets.only(top: 15, bottom: 10),
-                            width: double.infinity,
-                            color: hexToColor("#D7CFCF")),
-                      if (_isExpanded)
-                        Expanded(
-                          child: ListView.builder(
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemCount: priceDetails1.length,
-                            itemBuilder: (context, index) {
-                              return priceText(priceDetails1[index]);
-                            },
-                          ),
-                        )
-                    ],
-                  ),
-                ),
+              PriceDetailsContainer(
+                isExpanded: _isExpanded,
+                label: widget.label2,
+                price: widget.price2,
+                description: widget.description2,
+                expandedHeight: 1150,
+                data: priceDetails1,
               ),
-              Expanded(
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
-                  height: _isExpanded ? 1150 : 170,
-                  margin: const EdgeInsets.all(20),
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: hexToColor("#fef7ff"),
-                    borderRadius: const BorderRadius.all(Radius.circular(20)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: _isExpanded
-                        ? MainAxisAlignment.start
-                        : MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      nonExpandedDetails(
-                        "Customized",
-                        "Contact Us",
-                        "Perfect for Entrepreneurs",
-                      ),
-                      if (_isExpanded)
-                        Container(
-                            height: 1,
-                            margin: const EdgeInsets.only(top: 15, bottom: 10),
-                            width: double.infinity,
-                            color: hexToColor("#D7CFCF")),
-                      if (_isExpanded)
-                        Expanded(
-                          child: ListView.builder(
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemCount: priceDetails.length,
-                            itemBuilder: (context, index) {
-                              return priceText(priceDetails[index]);
-                            },
-                          ),
-                        )
-                    ],
-                  ),
-                ),
+              PriceDetailsContainer(
+                isExpanded: _isExpanded,
+                label: widget.label3,
+                price: widget.price3,
+                description: widget.description3,
+                expandedHeight: 1150,
+                data: priceDetails,
               ),
             ],
           ),
-        ),
         buildButton(
           _isExpanded ? "Hide Full Details" : "View Full Details",
           _toggleExpansion, // Call the toggle function
@@ -300,6 +282,82 @@ class WebPriceExpansionState extends State<WebPriceExpansion> {
     setState(() {
       _isExpanded = !_isExpanded;
     });
+  }
+}
+
+class PriceDetailsContainer extends StatefulWidget {
+  final bool isExpanded;
+  final String label;
+  final String price;
+  final double expandedHeight;
+  final String description;
+  final List<Map<String, dynamic>> data;
+  const PriceDetailsContainer(
+      {super.key,
+      required this.isExpanded,
+      required this.label,
+      required this.description,
+      required this.price,
+      required this.expandedHeight,
+      required this.data});
+
+  @override
+  State<StatefulWidget> createState() {
+    return PriceDetailsContainerState();
+  }
+}
+
+class PriceDetailsContainerState extends State<PriceDetailsContainer> {
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      height: widget.isExpanded ? widget.expandedHeight : 170,
+      width: double.infinity,
+      margin: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: hexToColor("#fef7ff"),
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: widget.isExpanded
+            ? MainAxisAlignment.start
+            : MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          nonExpandedDetails(
+            widget.label,
+            widget.price,
+            widget.description,
+          ),
+          if (widget.isExpanded)
+            Container(
+                height: 1,
+                margin: const EdgeInsets.only(top: 15, bottom: 10),
+                width: double.infinity,
+                color: hexToColor("#D7CFCF")),
+          if (widget.isExpanded)
+            Expanded(
+              child: ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: widget.data.length,
+                itemBuilder: (context, index) {
+                  return priceText(widget.data[index]);
+                },
+              ),
+            )
+        ],
+      ),
+    );
   }
 
   Widget nonExpandedDetails(String text, String price, String details) {
