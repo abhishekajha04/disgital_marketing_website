@@ -35,44 +35,10 @@ class OurServicesState extends State<OurServices> {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 13, fontFamily: "Montserrat"),
             )),
-        if (Responsive.isDesktop(context)) const WebOurServices(),
-        if (!Responsive.isDesktop(context)) const MobOurServices()
+        if (Responsive.isDesktop(context)) const WebOurServicesGrid(),
+        if (!Responsive.isDesktop(context)) const MobOurServicesGrid()
       ],
     );
-  }
-}
-
-class WebOurServices extends StatefulWidget {
-  const WebOurServices({super.key});
-
-  @override
-  State<StatefulWidget> createState() {
-    return WebOurServicesState();
-  }
-}
-
-class WebOurServicesState extends State<WebOurServices> {
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [WebOurServicesGrid()],
-    );
-  }
-}
-
-class MobOurServices extends StatefulWidget {
-  const MobOurServices({super.key});
-
-  @override
-  State<StatefulWidget> createState() {
-    return MobOurServicesState();
-  }
-}
-
-class MobOurServicesState extends State<MobOurServices> {
-  @override
-  Widget build(BuildContext context) {
-    return const MobOurServicesGrid();
   }
 }
 
@@ -166,7 +132,7 @@ Widget ourServicesGrid(
               border: Border.all(
                 color: isHovered ? Colors.white : hexToColor("#DDDDDD"),
               ),
-              color: hexToColor("#fef7ff"),
+              color: hexToColor("#FFFFFF"),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

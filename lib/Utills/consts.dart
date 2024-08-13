@@ -294,3 +294,128 @@ final List<Map<String, dynamic>> priceDetails2 = [
     "description": "Almost any functionality that a client wants can be coded"
   },
 ];
+
+const String featuresText =
+    "Speeder Creatives redefines success with tailored services in "
+    "graphic design, video editing, website development, and intuitive UI/UX design. Dive into "
+    "innovation and elevate your digital presence with our creative expertise.";
+
+final List<Map<String, dynamic>> featuresGridMap = [
+  {
+    "title": "Social Media Marketing",
+    "a": "Learn More",
+    "description":
+        "Performance marketing at Speeder Creatives optimizes strategies for efficient, measurable results, enhancing ROI through meticulous data-driven insights in the dynamic digital landscape.",
+    "image": "assets/images/1.png"
+  },
+  {
+    "title": "Website Development",
+    "a": "Learn More",
+    "description":
+        "Website development at Speeder Creatives seamlessly blends design and functionality to craft user-friendly, high-performing sites. Our approach enhances digital presence and achieves key business objectives with precision and innovation.",
+    "image": "assets/images/2.png"
+  },
+  {
+    "title": "E-Commerce Solution",
+    "a": "Learn More",
+    "description":
+        "At Speeder Creatives, our E-Commerce Solutions optimize online businesses, ensuring seamless transactions and enhancing customer experiences to foster sustained growth and success.",
+    "image": "assets/images/3.png"
+  },
+  {
+    "title": "Graphic Design",
+    "a": "Learn More",
+    "description":
+        "Graphic design merges creativity and strategy to visually communicate ideas, ensuring effective and aesthetic message delivery.",
+    "image": "assets/images/4.png"
+  },
+  {
+    "title": "UI/UX",
+    "a": "Learn More",
+    "description":
+        "UI/UX Design harmonizes user-centricity with intuitive functionality, crafting seamless digital experiences that captivate and delight. ",
+    "image": "assets/images/5.png"
+  },
+  {
+    "title": "Full API Integration",
+    "a": "Learn More",
+    "description":
+        "Full API Integration optimizes data flow, seamlessly connecting systems to boost functionality, efficiency, and synchronize operations effectively.",
+    "image": "assets/images/6.png"
+  },
+  {
+    "title": "Business Development",
+    "a": "Learn More",
+    "description":
+        "Business Development drives growth by cultivating strategic partnerships and implementing initiatives to ensure sustained success and expand market presence effectively. ",
+    "image": "assets/images/7.png"
+  },
+  {
+    "title": "Content Writing",
+    "a": "Learn More",
+    "description":
+        "Content writing strategically communicates messages, blending creativity and precision to engage audiences effectively and achieve specific communication goals.",
+    "image": "assets/images/8.png"
+  },
+  {
+    "title": "Influencer Marketing",
+    "a": "Learn More",
+    "description":
+        "Smart Budgeting strategically optimizes financial resources by allocating funds to maximize efficiency and achieve targeted goals effectively.",
+    "image": "assets/images/9.png"
+  },
+  {
+    "title": "Google Adword ",
+    "a": "Learn More",
+    "description":
+        "Business Development drives growth by cultivating strategic partnerships and implementing initiatives to ensure sustained success and expand market presence effectively.",
+    "image": "assets/images/10.png"
+  },
+  {
+    "title": "Searche Engine Optimisation",
+    "a": "Learn More",
+    "description":
+        "Content writing strategically communicates messages, blending creativity and precision to engage audiences effectively and achieve specific communication goals.",
+    "image": "assets/images/11.png"
+  },
+  {
+    "title": "Video Editing",
+    "a": "Learn More",
+    "description":
+        "Smart Budgeting strategically optimizes financial resources by allocating funds to maximize efficiency and achieve targeted goals effectively.",
+    "image": "assets/images/12.png"
+  }
+];
+
+const String speederCreativeText =
+    "Transforming success through captivating web design, strategic social campaigns, and "
+    "powerful SEO. Dive into innovation and elevate your digital presence with us.";
+
+const String speederCreativeText1 =
+    "Crafting personalized strategies and innovative solutions "
+    "over seven years of dedicated service and client satisfaction with Speeder Creative.";
+
+const String speederCreativeText2 =
+    "Join our 1400+ satisfied clients who've benefited from"
+    " our dedicated service and personalized approach to success with Speeder Creative.";
+
+const String speederCreativeText3 =
+    "Successfully completing over 140 projects, delivering"
+    " exceptional results with every client collaboration and project accomplishment with Speeder";
+
+const String speederCreativeText4 =
+    "Empowering global success through impactful solutions tailored"
+    " to diverse markets and client needs with Speeder Creative.";
+
+const String ourPortfolioText =
+    "Discover Speeder Creative’ standout portfolio showcasing web design, Unique "
+    "Creatives, Reels, Videos, Engagement Ratio. Choose innovation, choose us.";
+
+const String customerSupportText =
+    "We redefine success with bespoke services, from eye-catching"
+    " web design to strategic social campaigns. Dive into innovation, choose Creative Sharks for "
+    "a digital presence that stands out.";
+
+const String contactUsText =
+    "Ready to elevate your digital presence? Let's collaborate and bring "
+    "your vision to life. Get in touch with us today and discover how we can empower your brand's success.";

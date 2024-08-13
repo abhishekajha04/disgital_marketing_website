@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:speeder_website/Utills/utils.dart';
 import 'package:speeder_website/home_page/home_page.dart';
 
 void main() {
@@ -12,9 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Speeder Creative',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: hexToColor("#FFFFFF")),
         useMaterial3: true,
       ),
       home: const HomePage(),

@@ -28,6 +28,7 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: hexToColor("#FFFFFF"),
       body: SafeArea(
         child: Column(
           children: [

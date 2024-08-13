@@ -317,7 +317,7 @@ class PriceDetailsContainerState extends State<PriceDetailsContainer> {
       margin: const EdgeInsets.all(20),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: hexToColor("#fef7ff"),
+        color: hexToColor("#FFFFFF"),
         borderRadius: const BorderRadius.all(Radius.circular(20)),
         boxShadow: [
           BoxShadow(
