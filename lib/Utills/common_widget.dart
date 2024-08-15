@@ -61,7 +61,7 @@ Widget fillDetailsTypeIII(
       ],
     ),
   );
-}
+} 
 
 Widget buildButton(
   String title,

@@ -10,6 +10,7 @@ const String whatWeDoingContent =
 
 const double leftPadding = 100;
 const double rightPadding = 125;
+const double phonePadding = 20;
 const String aboutSpeeder = "About Speeder Creatives";
 const String aboutSpeederDescription = "Welcome to Speeder Creatives, where we "
     "accelerate your brand's creative journey with innovation "
@@ -419,3 +420,75 @@ const String customerSupportText =
 const String contactUsText =
     "Ready to elevate your digital presence? Let's collaborate and bring "
     "your vision to life. Get in touch with us today and discover how we can empower your brand's success.";
+
+const String servicesTest =
+    "We deliver business impact through PR & marketing with a combination of intellectual"
+    " curiosity, industry experience, urgency, and precision.";
+
+class Service {
+  final String name;
+  final String description;
+  final String percentage;
+  final String s1;
+  final String s2;
+  final String s3;
+  final String s4;
+  final String s5;
+
+  Service(
+      {required this.name,
+      required this.description,
+      required this.percentage,
+      required this.s1,
+      required this.s2,
+      required this.s3,
+      required this.s4,
+      required this.s5});
+}
+
+List<Service> services = [
+  Service(
+    name: "Branding",
+    percentage: "93 %",
+    description:
+        "Crafting Your Brand's Unique Identity\n with Care and Expertise.",
+    s1: "Logo Design",
+    s2: "Visual Identity",
+    s3: "Brand Guidelines",
+    s4: "Creative Campaigns",
+    s5: "Digital Presence",
+  ),
+  Service(
+    name: "Social Media Management",
+    percentage: "90 %",
+    description:
+        "We manage your social media channels\n to grow your online presence.",
+    s1: "Content Creation",
+    s2: "Strategic Social Media Planning",
+    s3: "High Quality Graphic/Video",
+    s4: "Insightful Performance Tracking",
+    s5: "Targeted Ad Campaigns",
+  ),
+  Service(
+    name: "Application Development",
+    percentage: "91 %",
+    description:
+        "Developing robust and scalable \napplications tailored to your needs.",
+    s1: "Custom App Design",
+    s2: "Feature-Rich Development",
+    s3: "Seamless Integration",
+    s4: "User Experience Optimization",
+    s5: "Ongoing Support & Maintenance",
+  ),
+  Service(
+    name: "Free Service",
+    percentage: "98 %",
+    description:
+        "Explore our range of free services \ndesigned to help you get started.",
+    s1: "Free Initial Consultation",
+    s2: "Complimentary Account Setup",
+    s3: "Three Free Graphics or Posts",
+    s4: "Free Basic Content Creation",
+    s5: "One-Time Social Media Audi",
+  ),
+];
