@@ -266,7 +266,7 @@ class AllServicesSectionState extends State<AllServicesSection> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black
-                                    .withOpacity(0.2), // Shadow color
+                                    .withOpacity(0.1), // Shadow color
                                 spreadRadius: 5, // Spread radius
                                 blurRadius: 7, // Blur radius
                                 offset: const Offset(0, 3), // Shadow position

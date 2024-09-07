@@ -50,10 +50,17 @@ Widget fillDetailsTypeIII(
           child: TextField(
             controller: controller,
             keyboardType: TextInputType.text,
-            style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
+            style: const TextStyle(
+                fontSize: 15,
+                fontFamily: "Montserrat",
+                fontWeight: FontWeight.w500),
             maxLines: null,
             decoration: InputDecoration(
               hintText: hintText,
+              hintStyle: const TextStyle(
+                fontSize: 15,
+                fontFamily: "Montserrat",
+              ),
               border: InputBorder.none,
             ),
           ),
@@ -61,7 +68,7 @@ Widget fillDetailsTypeIII(
       ],
     ),
   );
-} 
+}
 
 Widget buildButton(
   String title,

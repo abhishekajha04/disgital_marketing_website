@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:speeder_website/Utills/common_widget.dart';
 import 'package:speeder_website/Utills/utils.dart';
 import 'package:speeder_website/responsive/responsive.dart';
+import 'package:speeder_website/update_data/update_contact_us_data.dart';
 
 class ContactUs extends StatefulWidget {
   const ContactUs({super.key});
@@ -35,6 +36,12 @@ class WebContactUs extends StatefulWidget {
 
 class WebContactUsState extends State<WebContactUs> {
   final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
+  final phoneNumber = TextEditingController();
+  final alternatePhoneNumber = TextEditingController();
+  final userEmail = TextEditingController();
+  final userMssage = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -71,7 +78,7 @@ class WebContactUsState extends State<WebContactUs> {
                       ),
                       const SizedBox(width: 30),
                       Expanded(
-                        child: fillDetails("", "Last Name", firstNameController,
+                        child: fillDetails("", "Last Name", lastNameController,
                             width: double.infinity, padding: 0),
                       )
                     ],
@@ -80,7 +87,7 @@ class WebContactUsState extends State<WebContactUs> {
                     children: [
                       Expanded(
                         child: fillDetails("Contact Number",
-                            "Enter Contact Number", firstNameController,
+                            "Enter Contact Number", phoneNumber,
                             isRequired: 1, width: double.infinity, padding: 30),
                       ),
                       const SizedBox(width: 30),
@@ -88,20 +95,26 @@ class WebContactUsState extends State<WebContactUs> {
                         child: fillDetails(
                             "Alt. Contact no. (Optional)",
                             "Enter Alternate Mobile Number",
-                            firstNameController,
+                            alternatePhoneNumber,
                             width: double.infinity,
                             padding: 30),
                       )
                     ],
                   ),
-                  fillDetails(
-                      "Email", "Enter Email Address", firstNameController,
+                  fillDetails("Email", "Enter Email Address", userEmail,
                       isRequired: 1, width: double.infinity, padding: 30),
-                  fillDetailsTypeIII(
-                      "Message", "Enter Message..", firstNameController,
+                  fillDetailsTypeIII("Message", "Enter Message..", userMssage,
                       padding: 30, isRequired: 1),
                   const SizedBox(height: 40),
-                  buildButton("Submit", () {},
+                  buildButton("Submit", () {
+                    updateUserContactData(
+                        firstNameController.text.toString(),
+                        lastNameController.text.toString(),
+                        int.tryParse(phoneNumber.text) ?? 0,
+                        int.tryParse(alternatePhoneNumber.text) ?? 0,
+                        userEmail.text.toString(),
+                        userMssage.text.toString());
+                  },
                       width: double.infinity,
                       leftMargin: 0,
                       rightMargin: 0,
@@ -132,6 +145,11 @@ class MobContactUsState extends State<MobContactUs> {
   @override
   Widget build(BuildContext context) {
     final firstNameController = TextEditingController();
+    final lastNameController = TextEditingController();
+    final phoneNumber = TextEditingController();
+    final alternatePhoneNumber = TextEditingController();
+    final userEmail = TextEditingController();
+    final userMssage = TextEditingController();
     return Container(
       width: double.infinity,
       color: hexToColor("#ECF1FA"),
@@ -150,20 +168,27 @@ class MobContactUsState extends State<MobContactUs> {
           const SizedBox(height: 30),
           fillDetails("Name", "First Name", firstNameController,
               isRequired: 1, width: double.infinity, padding: 0),
-          fillDetails("", "Last Name", firstNameController,
+          fillDetails("", "Last Name", lastNameController,
               width: double.infinity, padding: 0),
-          fillDetails(
-              "Contact Number", "Enter Contact Number", firstNameController,
+          fillDetails("Contact Number", "Enter Contact Number", phoneNumber,
               isRequired: 1, width: double.infinity, padding: 30),
           fillDetails("Alt. Contact no. (Optional)",
-              "Enter Alternate Mobile Number", firstNameController,
+              "Enter Alternate Mobile Number", alternatePhoneNumber,
               width: double.infinity, padding: 30),
-          fillDetails("Email", "Enter Email Address", firstNameController,
+          fillDetails("Email", "Enter Email Address", userEmail,
               isRequired: 1, width: double.infinity, padding: 30),
-          fillDetailsTypeIII("Message", "Enter Message..", firstNameController,
+          fillDetailsTypeIII("Message", "Enter Message..", userMssage,
               padding: 30, isRequired: 1),
           const SizedBox(height: 40),
-          buildButton("Submit", () {},
+          buildButton("Submit", () {
+            updateUserContactData(
+                firstNameController.text.toString(),
+                lastNameController.text.toString(),
+                int.tryParse(phoneNumber.text) ?? 0,
+                int.tryParse(alternatePhoneNumber.text) ?? 0,
+                userEmail.text.toString(),
+                userMssage.text.toString());
+          },
               width: double.infinity,
               leftMargin: 0,
               rightMargin: 0,
