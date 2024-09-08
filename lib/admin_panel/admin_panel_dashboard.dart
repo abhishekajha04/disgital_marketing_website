@@ -14,7 +14,7 @@ class AdminPanelDashboardState extends State<AdminPanelDashboard> {
     return const Scaffold(
       body: SafeArea(
           child: Center(
-        child: Text("Admin Panel Dashboard"),
+        child: Text("Admin Pane Dashboard"),
       )),
     );
   }

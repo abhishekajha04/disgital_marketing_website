@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Speeder Creative',
+      title: 'ticket booking chat app',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: hexToColor("#FFFFFF")),
         useMaterial3: true,
