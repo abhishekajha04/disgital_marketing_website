@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:speeder_website/Utills/common_widget.dart';
 import 'package:speeder_website/Utills/consts.dart';
 import 'package:speeder_website/Utills/utils.dart';
+import 'package:speeder_website/dialogs/contact_us_dialog.dart';
 import 'package:speeder_website/responsive/responsive.dart';
+
+const mockupMobWidth = 500;
 
 class OurServices extends StatefulWidget {
   const OurServices({super.key});
@@ -141,7 +144,9 @@ Widget ourServicesGrid(
                 // Use Image.asset since your images are local assets
                 Image.asset(
                   gridMap[index]['image'], // Remove string interpolation here
-                  width: 75 / mockupWebWidth * width,
+                  width: width > 650
+                      ? 75 / mockupWebWidth * width
+                      : 100 / mockupMobWidth * width,
                   errorBuilder: (BuildContext context, Object exception,
                       StackTrace? stackTrace) {
                     return const Text(
@@ -168,29 +173,38 @@ Widget ourServicesGrid(
                   ),
                 ),
                 SizedBox(height: 15 / mockupWebWidth * width),
-                GestureDetector(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Learn More",
-                        style: TextStyle(
-                          fontFamily: "Montserrat",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return ContactUsServiceDialog(
+                              message: gridMap[index]['title']);
+                        },
+                      );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Learn More",
+                          style: TextStyle(
+                            fontFamily: "Montserrat",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 30),
-                      Image.asset(
-                        "assets/images/learn_more.png",
-                        width: 15,
-                      ),
-                    ],
+                        const SizedBox(width: 30),
+                        Image.asset(
+                          "assets/images/learn_more.png",
+                          width: 15,
+                        ),
+                      ],
+                    ),
                   ),
-                  onTap: () {
-                    // Implement the onTap logic here
-                  },
                 ),
               ],
             ),

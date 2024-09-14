@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:speeder_website/Utills/common_widget.dart';
 import 'package:speeder_website/Utills/utils.dart';
+import 'package:speeder_website/dialogs/contact_us_dialog.dart';
 import 'package:speeder_website/utills/consts.dart';
 
 class FreeTrialSection extends StatefulWidget {
@@ -156,7 +157,9 @@ class FreeTrialSectionState extends State<FreeTrialSection> {
             if (width >= 500)
               mainMenuButton("Let's Talk", width: 150, fontSize: 14),
             if (width < 500)
-              buildButton("Let's Talk", () {},
+              buildButton("Let's Talk", () {
+                const ContactUsServiceDialog(message: 'Want To Talk');
+              },
                   height: 40,
                   width: 110,
                   backgroundColor: "#002366",
@@ -169,7 +172,10 @@ class FreeTrialSectionState extends State<FreeTrialSection> {
                   topMargin: 0),
             SizedBox(width: width > 500 ? 50 : 20),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  const ContactUsServiceDialog(
+                      message: 'Need Free Consultancy');
+                },
                 child: Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 10),
                   child: Row(

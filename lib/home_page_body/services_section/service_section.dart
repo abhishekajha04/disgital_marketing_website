@@ -56,28 +56,6 @@ class WebServiceSectionState extends State<WebServiceSection> {
                     child: AllServicesSection(),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 100.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Learn More",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontFamily: "Montserrat",
-                            fontWeight: FontWeight.w400),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(left: 20),
-                        width: 100,
-                        height: 1,
-                        color: hexToColor("#212C62"),
-                      )
-                    ],
-                  ),
-                ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,

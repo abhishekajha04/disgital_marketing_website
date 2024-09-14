@@ -1,8 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:speeder_website/Utills/common_widget.dart';
 import 'package:speeder_website/Utills/utils.dart';
+import 'package:speeder_website/dialogs/failed_dialog.dart';
+import 'package:speeder_website/dialogs/success_dialog.dart';
 import 'package:speeder_website/responsive/responsive.dart';
-import 'package:speeder_website/update_data/update_contact_us_data.dart';
 
 class ContactUs extends StatefulWidget {
   const ContactUs({super.key});
@@ -41,6 +43,20 @@ class WebContactUsState extends State<WebContactUs> {
   final alternatePhoneNumber = TextEditingController();
   final userEmail = TextEditingController();
   final userMssage = TextEditingController();
+  var _isButtonVisible = true;
+  var _isProgressVisible = false;
+
+  @override
+  void dispose() {
+    // Don't forget to dispose of the controllers to avoid memory leaks
+    firstNameController.dispose();
+    lastNameController.dispose();
+    phoneNumber.dispose();
+    alternatePhoneNumber.dispose();
+    userEmail.dispose();
+    userMssage.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,15 +123,26 @@ class WebContactUsState extends State<WebContactUs> {
                       padding: 30, isRequired: 1),
                   const SizedBox(height: 40),
                   buildButton("Submit", () {
-                    updateUserContactData(
-                        firstNameController.text.toString(),
-                        lastNameController.text.toString(),
-                        int.tryParse(phoneNumber.text) ?? 0,
-                        int.tryParse(alternatePhoneNumber.text) ?? 0,
-                        userEmail.text.toString(),
-                        userMssage.text.toString());
+                    if (firstNameController.text.toString().isNotEmpty &&
+                        phoneNumber.text.toString().isNotEmpty &&
+                        userEmail.text.toString().isNotEmpty &&
+                        userMssage.text.toString().isNotEmpty) {
+                      updateUserContactDataWeb(
+                          context,
+                          firstNameController.text.toString(),
+                          lastNameController.text.toString(),
+                          int.tryParse(phoneNumber.text) ?? 0,
+                          int.tryParse(alternatePhoneNumber.text) ?? 0,
+                          userEmail.text.toString(),
+                          userMssage.text.toString());
+                    } else {
+                      showFailedDialog(context,
+                          " Contact Updation Failed! Please fill all the mandatory filled to contact us");
+                    }
                   },
                       width: double.infinity,
+                      isButtonVisible: _isButtonVisible,
+                      isProgressBarVisible: _isProgressVisible,
                       leftMargin: 0,
                       rightMargin: 0,
                       height: 55,
@@ -130,6 +157,53 @@ class WebContactUsState extends State<WebContactUs> {
       ),
     );
   }
+
+  void updateUserContactDataWeb(
+    BuildContext context,
+    String firstName,
+    String lastName,
+    int contactNumber,
+    int alternateContactNumber,
+    String email,
+    String message,
+  ) async {
+    try {
+      setState(() {
+        _isButtonVisible = false;
+        _isProgressVisible = true;
+      });
+      final userDocRef = FirebaseFirestore.instance.collection('contactUs');
+      // Add user data (name and city) to the document
+      await userDocRef.add({
+        'first_name': firstName,
+        'last_name': lastName,
+        'contact_number': contactNumber,
+        'alt_contact_number': alternateContactNumber,
+        'email': email,
+        'message': message,
+        'created_date': FieldValue.serverTimestamp(),
+      });
+      debugPrint('Contact Detail Updated');
+      showSuccessDialog(context, 'Successfully Updated All Contacts');
+      firstNameController.clear(); // Clears the input
+      lastNameController.clear();
+      phoneNumber.clear();
+      alternatePhoneNumber.clear();
+      userEmail.clear();
+      userMssage.clear();
+      setState(() {
+        _isButtonVisible = true;
+        _isProgressVisible = false;
+      });
+    } catch (error) {
+      debugPrint("Error: ${error.toString()}");
+      setState(() {
+        _isButtonVisible = true;
+        _isProgressVisible = false;
+      });
+      showFailedDialog(context, "Error: ${error.toString()}");
+    }
+  }
 }
 
 class MobContactUs extends StatefulWidget {
@@ -142,14 +216,29 @@ class MobContactUs extends StatefulWidget {
 }
 
 class MobContactUsState extends State<MobContactUs> {
+  var _isButtonVisible = true;
+  var _isProgressVisible = false;
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
+  final phoneNumber = TextEditingController();
+  final alternatePhoneNumber = TextEditingController();
+  final userEmail = TextEditingController();
+  final userMssage = TextEditingController();
+
+  @override
+  void dispose() {
+    // Don't forget to dispose of the controllers to avoid memory leaks
+    firstNameController.dispose();
+    lastNameController.dispose();
+    phoneNumber.dispose();
+    alternatePhoneNumber.dispose();
+    userEmail.dispose();
+    userMssage.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final firstNameController = TextEditingController();
-    final lastNameController = TextEditingController();
-    final phoneNumber = TextEditingController();
-    final alternatePhoneNumber = TextEditingController();
-    final userEmail = TextEditingController();
-    final userMssage = TextEditingController();
     return Container(
       width: double.infinity,
       color: hexToColor("#ECF1FA"),
@@ -181,15 +270,26 @@ class MobContactUsState extends State<MobContactUs> {
               padding: 30, isRequired: 1),
           const SizedBox(height: 40),
           buildButton("Submit", () {
-            updateUserContactData(
-                firstNameController.text.toString(),
-                lastNameController.text.toString(),
-                int.tryParse(phoneNumber.text) ?? 0,
-                int.tryParse(alternatePhoneNumber.text) ?? 0,
-                userEmail.text.toString(),
-                userMssage.text.toString());
+            if (firstNameController.text.toString().isNotEmpty &&
+                phoneNumber.text.toString().isNotEmpty &&
+                userEmail.text.toString().isNotEmpty &&
+                userMssage.text.toString().isNotEmpty) {
+              updateUserContactDataMob(
+                  context,
+                  firstNameController.text.toString(),
+                  lastNameController.text.toString(),
+                  int.tryParse(phoneNumber.text) ?? 0,
+                  int.tryParse(alternatePhoneNumber.text) ?? 0,
+                  userEmail.text.toString(),
+                  userMssage.text.toString());
+            } else {
+              showFailedDialog(context,
+                  " Contact Updation Failed! Please fill all the mandatory filled to contact us");
+            }
           },
               width: double.infinity,
+              isButtonVisible: _isButtonVisible,
+              isProgressBarVisible: _isProgressVisible,
               leftMargin: 0,
               rightMargin: 0,
               height: 55,
@@ -199,5 +299,52 @@ class MobContactUsState extends State<MobContactUs> {
         ],
       ),
     );
+  }
+
+  void updateUserContactDataMob(
+    BuildContext context,
+    String firstName,
+    String lastName,
+    int contactNumber,
+    int alternateContactNumber,
+    String email,
+    String message,
+  ) async {
+    try {
+      setState(() {
+        _isButtonVisible = false;
+        _isProgressVisible = true;
+      });
+      final userDocRef = FirebaseFirestore.instance.collection('contactUs');
+      // Add user data (name and city) to the document
+      await userDocRef.add({
+        'first_name': firstName,
+        'last_name': lastName,
+        'contact_number': contactNumber,
+        'alt_contact_number': alternateContactNumber,
+        'email': email,
+        'message': message,
+        'created_date': FieldValue.serverTimestamp(),
+      });
+      debugPrint('Contact Detail Updated');
+      showSuccessDialog(context, 'Successfully Updated All Contacts');
+      firstNameController.clear(); // Clears the input
+      lastNameController.clear();
+      phoneNumber.clear();
+      alternatePhoneNumber.clear();
+      userEmail.clear();
+      userMssage.clear();
+      setState(() {
+        _isButtonVisible = true;
+        _isProgressVisible = false;
+      });
+    } catch (error) {
+      debugPrint("Error: ${error.toString()}");
+      setState(() {
+        _isButtonVisible = true;
+        _isProgressVisible = false;
+      });
+      showFailedDialog(context, "Error: ${error.toString()}");
+    }
   }
 }

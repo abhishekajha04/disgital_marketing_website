@@ -46,7 +46,9 @@ class PricingState extends State<Pricing> {
           price3: "Contact Us",
           description3: "Perfect for Entrepreneurs",
           expandedHeight: 1150,
-          data: priceDetails2,
+          data1: priceDetails2,
+          data2: priceDetails1,
+          data3: priceDetails,
         ),
         PriceExpansion(
           heading: "Brand Book",
@@ -60,8 +62,10 @@ class PricingState extends State<Pricing> {
           label3: "Primimum",
           price3: "₹29,999",
           description3: "Perfect for Entrepreneurs",
-          expandedHeight: 1150,
-          data: priceDetails2,
+          expandedHeight: 800,
+          data1: brandBookPriceDetails,
+          data2: brandBookPriceDetails0,
+          data3: brandBookPriceDetails1,
         ),
         PriceExpansion(
           heading: "SEO",
@@ -76,7 +80,9 @@ class PricingState extends State<Pricing> {
           price3: "₹34,999",
           description3: "Perfect for Entrepreneurs",
           expandedHeight: 1150,
-          data: priceDetails2,
+          data1: seoDetails,
+          data2: seoDetails0,
+          data3: seoDetails1,
         ),
         PriceExpansion(
           heading: "Performance Marketing",
@@ -90,8 +96,10 @@ class PricingState extends State<Pricing> {
           label3: "Premium",
           price3: "₹39,999",
           description3: "Perfect for Entrepreneurs",
-          expandedHeight: 1150,
-          data: priceDetails2,
+          expandedHeight: 750,
+          data1: perMarPriceDetails,
+          data2: perMarPriceDetails0,
+          data3: perMarPriceDetails1,
         ),
         PriceExpansion(
           heading: "Social Media Marketing",
@@ -105,8 +113,10 @@ class PricingState extends State<Pricing> {
           label3: "Premium",
           price3: "₹29,999",
           description3: "Perfect for Entrepreneurs",
-          expandedHeight: 1150,
-          data: priceDetails2,
+          expandedHeight: 800,
+          data1: socialMediaDetails,
+          data2: socialMediaDetails0,
+          data3: socialMediaDetails1,
         )
       ],
     );
@@ -128,7 +138,9 @@ class PriceExpansion extends StatefulWidget {
 
   final String description3;
 
-  final List<Map<String, dynamic>> data;
+  final List<Map<String, dynamic>> data1;
+  final List<Map<String, dynamic>> data2;
+  final List<Map<String, dynamic>> data3;
   const PriceExpansion(
       {super.key,
       required this.heading,
@@ -143,7 +155,9 @@ class PriceExpansion extends StatefulWidget {
       required this.description3,
       required this.price1,
       required this.expandedHeight,
-      required this.data});
+      required this.data1,
+      required this.data2,
+      required this.data3});
 
   @override
   State<StatefulWidget> createState() {
@@ -197,8 +211,8 @@ class PriceExpansionState extends State<PriceExpansion> {
                     label: widget.label1,
                     price: widget.price1,
                     description: widget.description1,
-                    expandedHeight: 1150,
-                    data: priceDetails2,
+                    expandedHeight: widget.expandedHeight,
+                    data: widget.data1,
                   ),
                 ),
                 Expanded(
@@ -207,8 +221,8 @@ class PriceExpansionState extends State<PriceExpansion> {
                     label: widget.label2,
                     price: widget.price2,
                     description: widget.description2,
-                    expandedHeight: 1150,
-                    data: priceDetails1,
+                    expandedHeight: widget.expandedHeight,
+                    data: widget.data2,
                   ),
                 ),
                 Expanded(
@@ -217,8 +231,8 @@ class PriceExpansionState extends State<PriceExpansion> {
                     label: widget.label3,
                     price: widget.price3,
                     description: widget.description3,
-                    expandedHeight: 1150,
-                    data: priceDetails,
+                    expandedHeight: widget.expandedHeight,
+                    data: widget.data3,
                   ),
                 ),
               ],
@@ -232,24 +246,24 @@ class PriceExpansionState extends State<PriceExpansion> {
                 label: widget.label1,
                 price: widget.price1,
                 description: widget.description1,
-                expandedHeight: 1150,
-                data: priceDetails2,
+                expandedHeight: widget.expandedHeight,
+                data: widget.data1,
               ),
               PriceDetailsContainer(
                 isExpanded: _isExpanded,
                 label: widget.label2,
                 price: widget.price2,
                 description: widget.description2,
-                expandedHeight: 1150,
-                data: priceDetails1,
+                expandedHeight: widget.expandedHeight,
+                data: widget.data2,
               ),
               PriceDetailsContainer(
                 isExpanded: _isExpanded,
                 label: widget.label3,
                 price: widget.price3,
                 description: widget.description3,
-                expandedHeight: 1150,
-                data: priceDetails,
+                expandedHeight: widget.expandedHeight,
+                data: widget.data3,
               ),
             ],
           ),
@@ -424,14 +438,15 @@ class PriceDetailsContainerState extends State<PriceDetailsContainer> {
               padding: const EdgeInsets.only(top: 5.0),
               child: Image.asset("assets/images/cross_mark.png", width: 15),
             ),
-          const SizedBox(width: 15),
+          if (iconType != 3) const SizedBox(width: 15),
           Expanded(
             child: Text(
               description,
-              style: const TextStyle(
-                  fontSize: 14,
+              style: TextStyle(
+                  fontSize: iconType != 3 ? 14 : 16,
                   fontFamily: "Montserrat",
-                  fontWeight: FontWeight.normal),
+                  fontWeight:
+                      iconType != 3 ? FontWeight.normal : FontWeight.bold),
             ),
           )
         ],

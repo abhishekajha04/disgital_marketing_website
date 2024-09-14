@@ -1,5 +1,6 @@
 int tabCount = 0;
 const mockupWebWidth = 1536;
+
 const String whatAreWeDoingText = "We redefine success with bespoke services, "
     "from eye-catching web design to strategic social campaigns. Dive into innovation,"
     " choose Creative Sharks for a digital presence that stands out.";
@@ -256,7 +257,7 @@ final List<Map<String, dynamic>> priceDetails1 = [
 ];
 
 final List<Map<String, dynamic>> priceDetails2 = [
-  {"iconType": 0, "description": "Free Domain Name"},
+  {"iconType": 0, "description": "1 Free Domain Name"},
   {"iconType": 0, "description": "10 Pages Static Site"},
   {"iconType": 0, "description": "Unlimited Images & Videos"},
   {"iconType": 0, "description": "Unlimited(Bandwidth/Space)"},
@@ -491,4 +492,649 @@ List<Service> services = [
     s4: "Free Basic Content Creation",
     s5: "One-Time Social Media Audi",
   ),
+];
+
+final List<Map<String, dynamic>> brandBookPriceDetails = [
+  {"iconType": 0, "description": "Logo Designing"},
+  {"iconType": 0, "description": "Social media post"},
+  {
+    "iconType": 0,
+    "description": "Banners for Facebook/Linked In Etc. platforms."
+  },
+  {"iconType": 0, "description": "Letterhead"},
+  {"iconType": 0, "description": "10 Pages Broucher"},
+  {"iconType": 0, "description": "5 Sticker Design"},
+  {"iconType": 0, "description": "Mockups"},
+  {
+    "iconType": 0,
+    "description": "3 Banners for offline marketing (Size may Vary Prices)"
+  },
+  {
+    "iconType": 1,
+    "description": "20 Banners for offline marketing (size may vary prices)"
+  },
+  {"iconType": 1, "description": "Selfie booth"},
+  {"iconType": 1, "description": "Standee design"},
+  {"iconType": 1, "description": "Visiting cards"},
+  {"iconType": 1, "description": "Storyboards"},
+  {"iconType": 1, "description": "Email Signature"},
+  {"iconType": 1, "description": "Envelope design"},
+  {"iconType": 1, "description": "Calendar Design"},
+  {"iconType": 1, "description": "Postcard design"},
+  {"iconType": 1, "description": "Magazine"},
+];
+
+final List<Map<String, dynamic>> brandBookPriceDetails0 = [
+  {"iconType": 0, "description": "Mascot logo designing"},
+  {"iconType": 0, "description": "30 pages Broucher"},
+  {"iconType": 0, "description": "40 Social Media Post Per Month"},
+  {
+    "iconType": 0,
+    "description": "Banners for website/Facebook/Linked in and more platforms."
+  },
+  {"iconType": 0, "description": "Letterhead"},
+  {"iconType": 0, "description": "15 Stickers Design"},
+  {"iconType": 0, "description": "Mockups"},
+  {
+    "iconType": 0,
+    "description": "7 Banners for offline marketing (size may vary prices)"
+  },
+  {"iconType": 0, "description": "Packaging Designing"},
+  {"iconType": 0, "description": "Stationary designing"},
+  {"iconType": 0, "description": "Selfie booth"},
+  {"iconType": 0, "description": "Standee design Visiting Card design"},
+  {"iconType": 0, "description": "Envelop design"},
+  {"iconType": 1, "description": "Email Signature"},
+  {"iconType": 1, "description": "Envelope design"},
+  {"iconType": 1, "description": "Calendar Design"},
+  {"iconType": 1, "description": "Postcard design"},
+  {"iconType": 1, "description": "Magazine"},
+];
+
+final List<Map<String, dynamic>> brandBookPriceDetails1 = [
+  {"iconType": 0, "description": "Logo with multiple options"},
+  {"iconType": 0, "description": "90 Social Media Posts per month"},
+  {"iconType": 0, "description": "Digital Banner's"},
+  {"iconType": 0, "description": "Packaging Designing"},
+  {"iconType": 0, "description": "Stationary Designing"},
+  {"iconType": 0, "description": "T-Shirt Designing"},
+  {"iconType": 0, "description": "Upto 60 pages brochure"},
+  {"iconType": 0, "description": "Ui Design"},
+  {"iconType": 0, "description": "Sticker & Mockup Design"},
+  {
+    "iconType": 0,
+    "description": "20 Banners for offline marketing (size may vary prices)"
+  },
+  {"iconType": 0, "description": "Selfie booth"},
+  {"iconType": 0, "description": "Standee design"},
+  {"iconType": 0, "description": "Letterhead"},
+  {"iconType": 0, "description": "Visiting cards"},
+  {"iconType": 0, "description": "Storyboards"},
+  {"iconType": 0, "description": "Email Signature"},
+  {"iconType": 0, "description": "Envelope design"},
+  {"iconType": 0, "description": "Calendar Design"},
+  {"iconType": 0, "description": "Postcard design"},
+  {"iconType": 0, "description": "Magazine"},
+];
+
+final List<Map<String, dynamic>> perMarPriceDetails = [
+  {
+    "iconType": 0,
+    "description": "Facebook & Instagram Ads"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Lead Generation"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Business Manager Setup"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Content Creation"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Phone call, lead, and revenue tracking dashboard"
+  }, // ✓ converted to 0
+  {
+    "iconType": 1,
+    "description": "Creation of website landing pages"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Graphic and video creation"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Analytics setup for improved tracking"
+  }, // × converted to 1
+  {"iconType": 1, "description": "Conversion optimization"}, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Daily social media posting"
+  }, // × converted to 1
+  {"iconType": 1, "description": "Website maintenance"}, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "App promotion strategies and execution"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Creation of 10+ ad creatives, including videos"
+  }, // ✓ converted to 0
+  {
+    "iconType": 1,
+    "description": "Lead generation campaigns"
+  }, // × converted to 1
+  {"iconType": 1, "description": "Engagement-focused ads"}, // × converted to 1
+  {"iconType": 1, "description": "Traffic generation"}, // X converted to 1
+  {
+    "iconType": 1,
+    "description": "Ad reporting and analysis"
+  }, // × converted to 1
+];
+
+final List<Map<String, dynamic>> perMarPriceDetails0 = [
+  {
+    "iconType": 0,
+    "description": "Set up of Facebook Ad Account Business Manager"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Brand awareness, reach, and impressions campaigns"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Shopping and e-commerce ads"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Creation of 10+ ad creatives, including videos"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Lead generation campaigns"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Engagement-focused ads"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Traffic generation"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Ad reporting and analysis"
+  }, // ✓ converted to 0
+  {
+    "iconType": 1,
+    "description": "Creation of website landing pages"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Graphic and video creation"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Analytics setup for improved tracking"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Daily social media posting"
+  }, // × converted to 1
+  {"iconType": 1, "description": "Website maintenance"}, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "App promotion strategies and execution"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Management of Google Ads"
+  }, // × converted to 1
+];
+
+final List<Map<String, dynamic>> perMarPriceDetails1 = [
+  {
+    "iconType": 0,
+    "description": "Management of Google Ads and Facebook Ads"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Ad Optimization & Reporting"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Creative Services"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Social Media & Maintenance"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description":
+        "E-commerce platform presence (Amazon, Flipkart, Meesho, Etsy, etc.)"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Advanced budget strategies"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Daily ad optimization"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Comprehensive ad reporting, sales, and revenue analysis"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Creation of website landing pages"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Graphic and video creation"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Analytics setup for improved tracking"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Conversion optimization"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Daily social media posting"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Website maintenance"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "App promotion strategies and execution"
+  }, // ✓ converted to 0
+];
+
+final List<Map<String, dynamic>> socialMediaDetails = [
+  {
+    "iconType": 0,
+    "description": "Facebook, Twitter and Instagram included"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "5 high-quality branded posts on each platform per week"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Profile optimization included"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Use of hashtags to grow visibility and engagement"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description":
+        "Email support (All updates will be processed within 72 hours)"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Minimum 3 months of commitment required for best results"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "For more details, Contact us"
+  }, // ✓ converted to 0
+  {
+    "iconType": 1,
+    "description": "Social accounts' setup and profile optimization included"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Approve/edit posts before they are published"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "24/7 analytics dashboard"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Use of hashtags to grow visibility and engagement"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description":
+        "Phone/Skype support (All updates will be processed within 36 hours)"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Dedicated account manager"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "For more details, Contact us"
+  }, // × converted to 1
+];
+
+final List<Map<String, dynamic>> socialMediaDetails0 = [
+  {
+    "iconType": 0,
+    "description":
+        "Facebook, Twitter, Instagram, Google My Business, LinkedIn, Pinterest & YouTube included"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description":
+        "7 high-quality branded posts on each platform per week (except YouTube)"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description":
+        "1 promotional video produced via www.biteable.com per month (Social accounts' setup and profile optimization included)"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Approve/edit posts before they are published"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "24/7 analytics dashboard"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description":
+        "Priority email support (All updates will be processed within 48 hours)"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Dedicated account manager"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "For more details, Contact us"
+  }, // ✓ converted to 0
+  {
+    "iconType": 1,
+    "description": "Use of hashtags to grow visibility and engagement"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description":
+        "Phone/Skype support (All updates will be processed within 36 hours)"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Dedicated account manager"
+  }, // × converted to 1
+];
+
+final List<Map<String, dynamic>> socialMediaDetails1 = [
+  {
+    "iconType": 0,
+    "description":
+        "Facebook, Twitter, Instagram, Google My Business, LinkedIn, Pinterest & YouTube included"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description":
+        "7 high-quality branded posts on each platform per week (except YouTube)"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "2 promotional videos"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "1 SEO blog article per week + uploading to your website"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description":
+        "1 Facebook + Instagram ad campaign creation & 5 Boosts per month (Budget not included)"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Social accounts' setup and profile optimization included"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Approve/edit posts before they are published"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "24/7 analytics dashboard"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Use of hashtags to grow visibility and engagement"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description":
+        "Phone/Skype support (All updates will be processed within 36 hours)"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Dedicated account manager"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "For more details, Contact us"
+  }, // ✓ converted to 0
+];
+
+final List<Map<String, dynamic>> seoDetails = [
+  {"iconType": 0, "description": "SEO price (May Vary)"}, // ✓ converted to 0
+  {"iconType": 0, "description": "10-15 Keywords"}, // ✓ converted to 0
+  {"iconType": 0, "description": "SEO Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Back Link Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Competitor Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Keyword Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Duplicate Content Check"}, // ✓ converted to 0
+  {"iconType": 3, "description": "ON PAGE OPTIMIZATION"}, // ✓ converted to 0
+  {"iconType": 1, "description": "Canonicalization"}, // × converted to 1
+  {"iconType": 1, "description": "Meta Tags Optimization"}, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Existing Content Optimization"
+  }, // * converted to 1
+  {
+    "iconType": 1,
+    "description": "Anchor & Title Tag Optimization"
+  }, // X converted to 1
+  {
+    "iconType": 1,
+    "description": "Header Tag Optimization (H1, H2, etc.)"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Image & Hyperlink Optimization"
+  }, // * converted to 1
+  {
+    "iconType": 1,
+    "description": "Robot.txt Creation & Analysis"
+  }, // * converted to 1
+  {
+    "iconType": 1,
+    "description": "HTML Sitemap Creation & Analysis"
+  }, // * converted to 1
+  {
+    "iconType": 1,
+    "description": "XML Sitemap Creation & Analysis"
+  }, // X converted to 1
+  {
+    "iconType": 1,
+    "description": "Internal Link Structuring & Optimization"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "SEO Friendly URLs (URL Rewriting)"
+  }, // X converted to 1
+  {
+    "iconType": 1,
+    "description": "Speed & Page Load Optimization"
+  }, // X converted to 1
+  {"iconType": 1, "description": "Crawl Error Resolution"}, // × converted to 1
+  {"iconType": 3, "description": "OFF PAGE OPTIMIZATION"}, // ✓ converted to 0
+  {
+    "iconType": 1,
+    "description": "Article Writing and Submission"
+  }, // × converted to 1
+  {
+    "iconType": 1,
+    "description": "Press Release Writing & Submission"
+  }, // * converted to 1
+  {"iconType": 1, "description": "Directory Submission"}, // × converted to 1
+  {"iconType": 1, "description": "Classified Submission"}, // × converted to 1
+  {"iconType": 1, "description": "Business Listing"}, // x converted to 1
+  {
+    "iconType": 1,
+    "description": "Web 2.0 Profile Creation"
+  }, // × converted to 1
+  {"iconType": 1, "description": "Social Bookmarking"}, // × converted to 1
+  {"iconType": 1, "description": "Blog Creation"}, // × converted to 1
+  {"iconType": 1, "description": "Blog Posting"}, // × converted to 1
+  {"iconType": 1, "description": "Blog Commenting"}, // x converted to 1
+  {"iconType": 1, "description": "Guest Blog Posting"}, // X converted to 1
+  {"iconType": 1, "description": "Forum Posting, Q&A"}, // × converted to 1
+  {"iconType": 1, "description": "Google Local Listing"}, // × converted to 1
+  {"iconType": 3, "description": "SEO REPORTS"}, // ✓ converted to 0
+  {"iconType": 1, "description": "Google Analytics Report"}, // * converted to 1
+  {"iconType": 1, "description": "Keyword Ranking Report"}, // * converted to 1
+  {"iconType": 1, "description": "Customer Support"}, // * converted to 1
+];
+
+final List<Map<String, dynamic>> seoDetails0 = [
+  {"iconType": 0, "description": "SEO Price (May Vary)"}, // ✓ converted to 0
+  {"iconType": 0, "description": "20-30 Keywords"}, // ✓ converted to 0
+  {"iconType": 0, "description": "SEO Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Back Link Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Competitor Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Keyword Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Duplicate Content Check"}, // ✓ converted to 0
+  {"iconType": 3, "description": "ON PAGE OPTIMIZATION"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Canonicalization"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Meta Tags Optimization"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Existing Content Optimization"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Anchor & Title Tag Optimization"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Header Tag Optimization"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Image & Hyperlink Optimization"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Robot.txt Creation & Analysis"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "HTML Sitemap Creation & Analysis"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "XML Sitemap Creation & Analysis"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Internal Link Structuring & Optimization"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "SEO Friendly URLs (URL Rewriting)"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Website Speed & Page Load Optimization"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Crawl Error Resolution"}, // ✓ converted to 0
+  {"iconType": 3, "description": "OFF PAGE OPTIMIZATION"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Article Writing and Submission"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Press Release Writing & Submission"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Directory Submission"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Classified Submission"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Business Listing"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Web 2.0 Profile Creation"
+  }, // ✓ converted to 0
+  {"iconType": 1, "description": "Social Bookmarking"}, // * converted to 1
+  {"iconType": 1, "description": "Blog Creation"}, // × converted to 1
+  {"iconType": 1, "description": "Blog Posting"}, // × converted to 1
+  {"iconType": 1, "description": "Blog Commenting"}, // × converted to 1
+  {"iconType": 1, "description": "Guest Blog Posting"}, // * converted to 1
+  {"iconType": 1, "description": "Forum Posting Q&A"}, // × converted to 1
+  {"iconType": 1, "description": "Google Local Listing"}, // * converted to 1
+  {"iconType": 3, "description": "SEO REPORTS"}, // ✓ converted to 0
+  {"iconType": 1, "description": "Google Analytics Report"}, // * converted to 1
+  {"iconType": 1, "description": "Keyword Ranking Report"}, // * converted to 1
+  {"iconType": 1, "description": "Customer Support"}, // × converted to 1
+];
+
+final List<Map<String, dynamic>> seoDetails1 = [
+  {"iconType": 0, "description": "SEO Price (May Vary)"}, // ✓ converted to 0
+  {"iconType": 0, "description": "30-40 Keywords"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "SEO price Vary depend on the Competition and Location"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "SEO Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Back Link Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Competitor Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Keyword Analysis"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Duplicate Content Check"}, // ✓ converted to 0
+  {"iconType": 3, "description": "ON PAGE OPTIMIZATION"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Canonicalization"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Meta Tags Optimization"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Existing Content Optimization"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Anchor & Title Tag Optimization"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Header Tag Optimization"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Image & Hyperlink Optimization"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Robot.txt Creation & Analysis"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "HTML Sitemap Creation & Analysis"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "XML Sitemap Creation & Analysis"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Internal Link Structuring & Optimization"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "SEO Friendly URLS (URL Rewriting)"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Website Speed & Page Load Optimization"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Crawl Error Resolution"}, // ✓ converted to 0
+  {"iconType": 3, "description": "OFF PAGE OPTIMIZATION"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Article Writing and Submission"
+  }, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Press Release Writing & Submission"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Directory Submission"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Classified Submission"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Business Listing"}, // ✓ converted to 0
+  {
+    "iconType": 0,
+    "description": "Web 2.0 Profile Creation"
+  }, // ✓ converted to 0
+  {"iconType": 0, "description": "Social Bookmarking"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Blog Creation"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Blog Posting"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Blog Commenting"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Guest Blog Posting"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Forum Posting, Q&A"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Google Local Listing"}, // ✓ converted to 0
+  {"iconType": 3, "description": "SEO REPORTS"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Google Analytics Report"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Keyword Ranking Report"}, // ✓ converted to 0
+  {"iconType": 0, "description": "Customer Support"}, // ✓ converted to 0
 ];

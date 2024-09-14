@@ -100,7 +100,7 @@ class WebViewAboutUsState extends State<WebViewAboutUs> {
                       ),
                     ),
                     const SizedBox(width: 150),
-                    imageContainer(1)
+                    imageContainer(1, 'assets/images/about_img.png')
                   ],
                 ),
               ),
@@ -113,7 +113,7 @@ class WebViewAboutUsState extends State<WebViewAboutUs> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    imageContainer(0),
+                    imageContainer(0, 'assets/images/founder_pic.png'),
                     const SizedBox(width: 150),
                     Container(
                       constraints: const BoxConstraints(maxWidth: 600),
@@ -231,7 +231,7 @@ class MobViewAboutUsState extends State<MobViewAboutUs> {
                 const SizedBox(
                   height: 15,
                 ),
-                imageContainer(0),
+                imageContainer(0, 'assets/images/about_img.png'),
                 const SizedBox(
                   height: 25,
                 ),
@@ -254,7 +254,7 @@ class MobViewAboutUsState extends State<MobViewAboutUs> {
                 const SizedBox(
                   height: 15,
                 ),
-                imageContainer(0),
+                imageContainer(0, 'assets/images/founder_pic.png'),
                 const SizedBox(
                   height: 25,
                 ),
@@ -303,20 +303,11 @@ class MobViewAboutUsState extends State<MobViewAboutUs> {
   }
 }
 
-Widget imageContainer(int i) {
+Widget imageContainer(int i, String image) {
   return Container(
     constraints: const BoxConstraints(maxWidth: 400),
     child: Stack(
       children: [
-        Container(
-          margin: const EdgeInsets.only(top: 150),
-          width: double.infinity,
-          height: 80,
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(Radius.circular(20)),
-            color: hexToColor("#002366"),
-          ),
-        ),
         Container(
           margin: i == 0
               ? const EdgeInsets.only(right: 35)
@@ -326,6 +317,15 @@ Widget imageContainer(int i) {
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(30)),
             color: hexToColor("#D9D9D9"),
+          ),
+          child: ClipRRect(
+            // Clip the image to respect the container's border radius
+            borderRadius: BorderRadius.circular(30),
+            child: Image.asset(
+              image,
+              fit: BoxFit
+                  .fill, // Fit the image inside the container without distortion
+            ),
           ),
         ),
       ],

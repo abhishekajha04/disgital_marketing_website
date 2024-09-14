@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:speeder_website/Utills/common_widget.dart';
 import 'package:speeder_website/Utills/utils.dart';
+import 'package:speeder_website/dialogs/contact_us_dialog.dart';
 import 'package:speeder_website/responsive/responsive.dart';
 
 class HomePageHeroSection extends StatefulWidget {
@@ -119,6 +120,7 @@ class LeftHeroSectionState extends State<LeftHeroSection> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
+    final Uri videoUrl = Uri.parse('https://www.instagram.com/p/C8zV6imMW2K/');
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,7 +165,9 @@ class LeftHeroSectionState extends State<LeftHeroSection> {
           children: [
             if (width > 500) mainMenuButton("Let's Talk"),
             if (width < 500)
-              buildButton("Let's Talk", () {},
+              buildButton("Let's Talk", () {
+                const ContactUsServiceDialog(message: 'Want To Talk');
+              },
                   height: 40,
                   width: 125,
                   backgroundColor: "#002366",
@@ -174,18 +178,30 @@ class LeftHeroSectionState extends State<LeftHeroSection> {
                   rightMargin: 0,
                   topMargin: 0),
             SizedBox(width: width > 500 ? 50 : 35),
-            Image.asset(
-              "assets/images/video_play.png",
-              width: 35,
-            ),
-            const SizedBox(width: 10),
-            Text(
-              "Watch Video",
-              style: TextStyle(
-                  fontSize: 16,
-                  fontFamily: "Poppins",
-                  color: hexToColor("#002366"),
-                  fontWeight: FontWeight.w600),
+            MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: () {
+                  launchUrlFunc(videoUrl);
+                },
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/video_play.png",
+                      width: 35,
+                    ),
+                    const SizedBox(width: 10),
+                    Text(
+                      "Watch Video",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: "Poppins",
+                          color: hexToColor("#002366"),
+                          fontWeight: FontWeight.w600),
+                    )
+                  ],
+                ),
+              ),
             )
           ],
         ),
