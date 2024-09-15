@@ -105,19 +105,21 @@ class ContactListState extends State<ContactList> {
               rows: documents.map((doc) {
                 return DataRow(cells: [
                   DataCell(
-                    Flexible(
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 150),
                       child: Text(
                         doc['first_name'] ?? '',
                         style: const TextStyle(
                           fontFamily: "Montserrat",
-                          fontSize: 12, // Reduced font size
+                          fontSize: 12,
                         ),
-                        overflow: TextOverflow.ellipsis, // If text is too long
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ),
                   DataCell(
-                    Flexible(
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 150),
                       child: Text(
                         doc['last_name'] ?? '',
                         style: const TextStyle(
@@ -129,20 +131,22 @@ class ContactListState extends State<ContactList> {
                     ),
                   ),
                   DataCell(
-                    Flexible(
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 200),
                       child: Text(
                         doc['email'] ?? '',
                         style: const TextStyle(
                           fontFamily: "Montserrat",
                           fontSize: 12,
                         ),
-                        overflow: TextOverflow.visible, // Wrap text
-                        softWrap: true, // Enable wrapping
+                        overflow: TextOverflow.visible,
+                        softWrap: true,
                       ),
                     ),
                   ),
                   DataCell(
-                    Flexible(
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 150),
                       child: Text(
                         doc['contact_number'].toString(),
                         style: const TextStyle(
@@ -154,7 +158,8 @@ class ContactListState extends State<ContactList> {
                     ),
                   ),
                   DataCell(
-                    Flexible(
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 150),
                       child: Text(
                         doc['alt_contact_number'].toString(),
                         style: const TextStyle(
@@ -166,7 +171,8 @@ class ContactListState extends State<ContactList> {
                     ),
                   ),
                   DataCell(
-                    Flexible(
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 300),
                       child: Text(
                         doc['message'] ?? '',
                         style: const TextStyle(
@@ -179,7 +185,8 @@ class ContactListState extends State<ContactList> {
                     ),
                   ),
                   DataCell(
-                    Flexible(
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 200),
                       child: Text(
                         doc['created_date'].toDate().toString(),
                         style: const TextStyle(

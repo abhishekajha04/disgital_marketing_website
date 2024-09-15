@@ -439,7 +439,7 @@ class AllServicesmobSectionState extends State<AllServicesmobSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(20),
+      margin: const EdgeInsets.all(20),
       width: 350,
       height: 1150,
       decoration: BoxDecoration(

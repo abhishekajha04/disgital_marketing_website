@@ -81,9 +81,14 @@ class AdminLoginPageState extends State<AdminLoginPage> {
                       const SizedBox(
                         height: 30,
                       ),
-                      fillDetails("Admin Password", "Enter Admin Password",
+                      fillDetails(
+                          "Admin Password",
+                          "Enter Admin Password",
+                          isPassWord: 1,
                           passwordController,
-                          isRequired: 1, width: 400, padding: 0),
+                          isRequired: 1,
+                          width: 400,
+                          padding: 0),
                       buildButton("Submit", () {
                         adminLogin(context, userIdController.text.toString(),
                             passwordController.text.toString());

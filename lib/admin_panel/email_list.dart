@@ -56,7 +56,8 @@ class EmailListState extends State<EmailList> {
               rows: documents.map((doc) {
                 return DataRow(cells: [
                   DataCell(
-                    Flexible(
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 200),
                       child: Text(
                         doc['email'] ?? '',
                         style: const TextStyle(
@@ -69,7 +70,8 @@ class EmailListState extends State<EmailList> {
                     ),
                   ),
                   DataCell(
-                    Flexible(
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 150),
                       child: Text(
                         doc['created_date'] != null
                             ? doc['created_date'].toDate().toString()
