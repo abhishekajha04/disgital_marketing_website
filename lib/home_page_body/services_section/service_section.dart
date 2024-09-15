@@ -17,7 +17,7 @@ class ServiceSectionState extends State<ServiceSection> {
     return Column(
       children: [
         if (Responsive.isDesktop(context)) const WebServiceSection(),
-        if (!Responsive.isDesktop(context)) const WebServiceSection()
+        if (!Responsive.isDesktop(context)) const MobServiceSection()
       ],
     );
   }
@@ -112,46 +112,6 @@ class WebServiceSectionState extends State<WebServiceSection> {
             ),
           ),
         ),
-      ],
-    );
-  }
-}
-
-class MobServiceSection extends StatefulWidget {
-  const MobServiceSection({super.key});
-  @override
-  State<StatefulWidget> createState() {
-    return MobServiceSectionState();
-  }
-}
-
-class MobServiceSectionState extends State<MobServiceSection> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Column(
-              children: [
-                const Text(
-                  "What We Doing",
-                  style: TextStyle(fontSize: 12, fontFamily: "Montserrat"),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Diving a Better way of \ndoing Marketing",
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontFamily: "Montserrat",
-                      color: hexToColor("#212C62")),
-                ),
-              ],
-            ),
-          ],
-        )
       ],
     );
   }
@@ -312,6 +272,317 @@ class AllServicesSectionState extends State<AllServicesSection> {
             padding: const EdgeInsets.fromLTRB(40, 20, 20, 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                button(0, "Branding"),
+                button(1, "Social Media Management"),
+                button(2, "Application Development"),
+                button(3, "Free Service")
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget listText(String label) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Row(
+        children: [
+          Image.asset(
+            "assets/images/tick.png",
+            width: 15,
+            height: 15,
+          ),
+          const SizedBox(width: 20),
+          Text(
+            label,
+            style: const TextStyle(
+              fontFamily: "Montserrat",
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget button(int buttonIndex, String label) {
+    return Container(
+      height: 75,
+      width: 380,
+      decoration: BoxDecoration(
+        color: currentIndex == buttonIndex
+            ? hexToColor("#FFFFFF")
+            : Colors.transparent,
+        borderRadius: const BorderRadius.all(Radius.circular(40)),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 25.0),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  currentIndex = buttonIndex;
+                });
+              },
+              child: Text(
+                label,
+                style: TextStyle(
+                    fontSize: 16,
+                    color: currentIndex == buttonIndex
+                        ? hexToColor("#212C62")
+                        : Colors.white,
+                    fontFamily: "Montserrat",
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
+          ),
+          const Spacer(flex: 1),
+          if (currentIndex == buttonIndex)
+            Container(
+              width: 55,
+              height: 55,
+              margin: const EdgeInsets.only(right: 15),
+              padding: const EdgeInsets.all(18),
+              decoration: BoxDecoration(
+                  color: hexToColor("#212C62"),
+                  borderRadius: const BorderRadius.all(Radius.circular(55))),
+              child: Image.asset("assets/images/white_right_arrow.png"),
+            )
+        ],
+      ),
+    );
+  }
+}
+
+class MobServiceSection extends StatefulWidget {
+  const MobServiceSection({super.key});
+  @override
+  State<StatefulWidget> createState() {
+    return MobServiceSectionState();
+  }
+}
+
+class MobServiceSectionState extends State<MobServiceSection> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.fromLTRB(20, 25, 0, 0),
+                  child: Text(
+                    "What We Doing",
+                    style: TextStyle(fontSize: 12, fontFamily: "Montserrat"),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  child: Text(
+                    "Diving a Better way of \ndoing Marketing",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: "Montserrat",
+                        color: hexToColor("#212C62")),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(90, 20, 0, 0),
+                  child: Container(
+                    constraints: const BoxConstraints(maxWidth: 300),
+                    child: Text(
+                      servicesTest,
+                      style: TextStyle(
+                          fontSize: 10,
+                          fontFamily: "Montserrat",
+                          color: hexToColor("#212C62")),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                const AllServicesmobSection()
+              ],
+            ),
+          ],
+        )
+      ],
+    );
+  }
+}
+
+class AllServicesmobSection extends StatefulWidget {
+  const AllServicesmobSection({super.key});
+  @override
+  State<StatefulWidget> createState() {
+    return AllServicesmobSectionState();
+  }
+}
+
+int currentIndex1 = 0;
+
+class AllServicesmobSectionState extends State<AllServicesmobSection> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(20),
+      width: 350,
+      height: 1150,
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(40)),
+        color: hexToColor("#212C62"),
+      ),
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 750,
+              width: 340,
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(40)),
+                color: hexToColor("#F3F8FF"),
+              ),
+              child: ListView.builder(
+                  itemCount: 1,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.fromLTRB(15, 100, 0, 0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                services[currentIndex].description,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  color: hexToColor("#212C62"),
+                                  fontFamily: "Montserrat",
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              listText(services[currentIndex].s1),
+                              listText(services[currentIndex].s2),
+                              listText(services[currentIndex].s3),
+                              listText(services[currentIndex].s4),
+                              listText(services[currentIndex].s5),
+                              const SizedBox(height: 15),
+                              const Text(
+                                "Learn More",
+                                style: TextStyle(
+                                  fontFamily: "Montserrat",
+                                ),
+                              ),
+                              Container(
+                                width: 85,
+                                height: 1,
+                                color: hexToColor("#212C62"),
+                              )
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(22, 0, 0, 0),
+                          child: Container(
+                            width: 230,
+                            height: 300,
+                            margin: const EdgeInsets.only(top: 65, right: 20),
+                            decoration: BoxDecoration(
+                              color: hexToColor("#FFFFFF"),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(20)),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black
+                                      .withOpacity(0.1), // Shadow color
+                                  spreadRadius: 5, // Spread radius
+                                  blurRadius: 7, // Blur radius
+                                  offset: const Offset(0, 3), // Shadow position
+                                ),
+                              ],
+                            ),
+                            child: Stack(
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      width: 125.0,
+                                      height: 125.0,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: 2,
+                                            color: hexToColor("#212C62")),
+                                        color: Colors.white, // Fill color
+                                        shape:
+                                            BoxShape.circle, // Circular shape
+                                      ),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            services[currentIndex].percentage,
+                                            style: TextStyle(
+                                                fontSize: 22,
+                                                fontFamily: "Montserrat",
+                                                color: hexToColor("#212C62"),
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          const SizedBox(height: 10),
+                                          Image.asset(
+                                            "assets/images/arrow.png",
+                                            width: 20,
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(height: 30),
+                                    const Text(
+                                      "We redefine success with bespoke services, from eye-catching Branding.",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontFamily: "Montserrat",
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    );
+                  }),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 60, 20, 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 button(0, "Branding"),

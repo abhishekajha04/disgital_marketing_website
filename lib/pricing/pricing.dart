@@ -79,7 +79,7 @@ class PricingState extends State<Pricing> {
           label3: "Premimum",
           price3: "₹34,999",
           description3: "Perfect for Entrepreneurs",
-          expandedHeight: 1150,
+          expandedHeight: 1175,
           data1: seoDetails,
           data2: seoDetails0,
           data3: seoDetails1,

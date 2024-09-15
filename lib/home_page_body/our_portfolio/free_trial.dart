@@ -155,10 +155,29 @@ class FreeTrialSectionState extends State<FreeTrialSection> {
         Row(
           children: [
             if (width >= 500)
-              mainMenuButton("Let's Talk", width: 150, fontSize: 14),
+              mainMenuButton(
+                "Let's Talk",
+                width: 150,
+                fontSize: 14,
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return const ContactUsServiceDialog(
+                          message: 'Want To Talk');
+                    },
+                  );
+                },
+              ),
             if (width < 500)
               buildButton("Let's Talk", () {
-                const ContactUsServiceDialog(message: 'Want To Talk');
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const ContactUsServiceDialog(
+                        message: 'Want To Talk');
+                  },
+                );
               },
                   height: 40,
                   width: 110,
@@ -173,8 +192,13 @@ class FreeTrialSectionState extends State<FreeTrialSection> {
             SizedBox(width: width > 500 ? 50 : 20),
             ElevatedButton(
                 onPressed: () {
-                  const ContactUsServiceDialog(
-                      message: 'Need Free Consultancy');
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return const ContactUsServiceDialog(
+                          message: 'Need Free Consultancy');
+                    },
+                  );
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 10),

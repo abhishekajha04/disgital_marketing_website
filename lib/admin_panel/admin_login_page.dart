@@ -4,6 +4,7 @@ import 'package:speeder_website/Utills/common_widget.dart';
 import 'package:speeder_website/Utills/consts.dart';
 import 'package:speeder_website/Utills/utils.dart';
 import 'package:speeder_website/admin_panel/admin_panel_dashboard.dart';
+import 'package:speeder_website/dialogs/failed_dialog.dart';
 import 'package:speeder_website/footer/footer.dart';
 
 class AdminLoginPage extends StatefulWidget {
@@ -124,6 +125,7 @@ class AdminLoginPageState extends State<AdminLoginPage> {
       });
     }).onError((error, stackTrace) {
       debugPrint('Something Error: ${error.toString()}');
+      showFailedDialog(context, 'Something Error: ${error.toString()}');
       setState(() {
         _isButtonVisible = true;
         _isProgressVisible = false;
@@ -134,7 +136,7 @@ class AdminLoginPageState extends State<AdminLoginPage> {
   void navigateToAdminDashboardScreen(BuildContext context) {
     Navigator.of(context)
         .pushReplacement(MaterialPageRoute(builder: (BuildContext context) {
-      return const AdminPanelDashboard();
+      return const AdminDashboardScreen();
     }));
   }
 }

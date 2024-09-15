@@ -208,31 +208,35 @@ Widget fillDetails(
 }
 
 Widget mainMenuButton(String label,
-    {double width = 125, double fontSize = 16}) {
+    {double width = 125, double fontSize = 16, required VoidCallback onTap}) {
   return HoverWidget(
     builder: (isHovered) {
-      return Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: isHovered ? Colors.grey.withOpacity(0.2) : Colors.transparent,
-        ),
-        child: PhysicalModel(
-          color: Colors.transparent,
-          elevation: isHovered ? 25 : 0,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: hexToColor("#002366"),
-            ),
-            height: 40,
-            width: width,
-            child: Center(
-              child: Text(
-                label,
-                style: TextStyle(
-                  fontSize: fontSize,
-                  color: Colors.white,
-                  fontFamily: "Montserrat",
+      return GestureDetector(
+        onTap: onTap,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color:
+                isHovered ? Colors.grey.withOpacity(0.2) : Colors.transparent,
+          ),
+          child: PhysicalModel(
+            color: Colors.transparent,
+            elevation: isHovered ? 25 : 0,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: hexToColor("#002366"),
+              ),
+              height: 40,
+              width: width,
+              child: Center(
+                child: Text(
+                  label,
+                  style: TextStyle(
+                    fontSize: fontSize,
+                    color: Colors.white,
+                    fontFamily: "Montserrat",
+                  ),
                 ),
               ),
             ),

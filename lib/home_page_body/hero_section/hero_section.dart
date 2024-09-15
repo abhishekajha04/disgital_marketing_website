@@ -163,10 +163,25 @@ class LeftHeroSectionState extends State<LeftHeroSection> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            if (width > 500) mainMenuButton("Let's Talk"),
+            if (width > 500)
+              mainMenuButton("Let's Talk", onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const ContactUsServiceDialog(
+                        message: 'Want To Talk');
+                  },
+                );
+              }),
             if (width < 500)
               buildButton("Let's Talk", () {
-                const ContactUsServiceDialog(message: 'Want To Talk');
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const ContactUsServiceDialog(
+                        message: 'Want To Talk');
+                  },
+                );
               },
                   height: 40,
                   width: 125,
@@ -202,7 +217,7 @@ class LeftHeroSectionState extends State<LeftHeroSection> {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
         SizedBox(height: width > 500 ? 50 : 35),
